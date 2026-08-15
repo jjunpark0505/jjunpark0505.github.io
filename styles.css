@@ -77,14 +77,15 @@ img{display:block;max-width:100%}
 .category-head{display:flex;justify-content:space-between;align-items:end;margin:0 0 24px;padding-bottom:13px;border-bottom:1px solid #d6cabc}
 .category-head span{font:700 22px Georgia,serif;letter-spacing:.13em}
 .category-head p{margin:0;color:var(--muted);font-size:13px}
-.menu-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
-.menu-card{display:grid;grid-template-columns:1.2fr .8fr;min-height:360px;overflow:hidden;background:var(--surface);border-radius:22px;box-shadow:0 12px 40px rgba(54,42,32,.07)}
-.menu-card.featured{grid-column:span 2;grid-template-columns:1.2fr .8fr;min-height:360px}
-.menu-photo{position:relative;padding:0;border:0;background:#f7f5f0;overflow:hidden;cursor:zoom-in;display:flex;align-items:center;justify-content:center}
-.menu-photo img{width:100%;height:100%;object-fit:contain;object-position:center;padding:18px;transition:transform .6s ease}
+.menu-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+.menu-card{display:flex;flex-direction:column;min-height:0;overflow:hidden;background:var(--surface);border-radius:22px;box-shadow:0 12px 40px rgba(54,42,32,.07)}
+.menu-card.featured{grid-column:auto;min-height:0}
+.menu-photo{position:relative;width:100%;height:320px;padding:0;border:0;background:#f7f5f0;overflow:hidden;cursor:zoom-in;display:flex;align-items:center;justify-content:center}
+.menu-card.featured .menu-photo{height:320px}
+.menu-photo img{width:100%;height:100%;object-fit:contain;object-position:center;padding:14px;transition:transform .6s ease}
 .menu-photo:hover img{transform:scale(1.01)}
 .zoom{position:absolute;right:16px;bottom:16px;padding:8px 11px;background:rgba(255,255,255,.9);border-radius:999px;font-size:9px;font-weight:800;letter-spacing:.14em}
-.menu-info{padding:28px;display:flex;flex-direction:column;justify-content:center}
+.menu-info{padding:24px 28px 28px;display:flex;flex-direction:column;justify-content:center;flex:1}
 .menu-info small,.drink-card small,.text-card small{color:var(--accent);font-size:10px;font-weight:800;letter-spacing:.17em}
 .menu-info h3,.drink-card h3,.text-card h3{margin:8px 0 10px;font-size:24px}
 .menu-info p,.text-card p{margin:0;color:var(--muted);font-size:14px}
@@ -161,8 +162,8 @@ footer small{display:block;margin-top:28px;padding-top:20px;border-top:1px solid
   .intro-strip div:last-child{border-bottom:0}
   .story,.home-project,.visit-layout{grid-template-columns:1fr}
   .story-visual{min-height:560px}
-  .menu-card,.menu-card.featured{grid-column:auto;grid-template-columns:1fr;min-height:0}
-  .menu-photo{height:360px}
+  .menu-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .menu-photo,.menu-card.featured .menu-photo{height:300px}
   .drink-grid{grid-template-columns:repeat(2,1fr)}
   .coffee-card{grid-column:span 2}
 }
@@ -184,8 +185,8 @@ footer small{display:block;margin-top:28px;padding-top:20px;border-top:1px solid
   .category-head{display:block}
   .category-head p{margin-top:5px}
   .menu-grid{grid-template-columns:1fr}
-  .menu-photo{height:320px}
-  .menu-info{padding:24px}
+  .menu-photo,.menu-card.featured .menu-photo{height:260px}
+  .menu-info{padding:22px 24px 26px}
   .drink-grid{grid-template-columns:1fr}
   .coffee-card{grid-column:auto}
   .drink-photo,.coffee-art,.coffee-slider,.ade-slider{height:340px}
